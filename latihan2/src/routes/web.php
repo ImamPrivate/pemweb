@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\PaymentController;
-use  App\Models\payment;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ClassRoomController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,10 +17,13 @@ use  App\Models\payment;
 */
 
 
-Route::get('/', function () {
-    return view('payment');
-})->name('payment.form');
+Route::get('/home', function () {
+    return view('home', [
+        'name' => 'Maman',
+        'role' => 'admin',
+        'buah' => ['mangga', 'apel', 'kurma', 'jeruk']
+    ]);
+});
 
-Route::post('/payment', [PaymentController::class, 'store'])->name('payment.store');
-
-Route::get('/payment/success', [PaymentController::class, 'index'])->name('payment.success');
+Route::get('/students', [StudentController::class, 'index']);
+Route::get('/class', [ClassRoomController::class, 'index']);
