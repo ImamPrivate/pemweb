@@ -6,7 +6,7 @@
             <div class="card-body p-4">
                 {{--  <h1>{{ trans('panel.site_title') }}</h1>  --}}
 
-                <center> <p class="text-muted">{{ trans('global.login') }}</p></center>
+                {{--  <center> <p class="text-muted">{{ trans('global.login') }}</p></center>  --}}
            
 
                 @if(session('message'))
